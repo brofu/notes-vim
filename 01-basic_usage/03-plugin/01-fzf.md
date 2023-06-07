@@ -70,6 +70,19 @@
     ```
     brew install ripgrep
     ```
+5. Now everything is OK. To make `Rg` command to accept more options, we can update it like this
+    ```
+    # key points:
+    # remove the `--` to accept more options
+    # remove the call to `shellescape`
+    # use `.` to connect 2 strings
+    # with, the `Rg` command cannot work without agrs. That's to say, it must be called like this:
+    # `:Rg -w -i Test internal/*` 
+    command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always " . <q-args>, fzf#vim#with_preview(), <bang>0)
+    ```
+
+
+
 
 **Questions**
 
