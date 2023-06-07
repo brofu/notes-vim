@@ -1,7 +1,18 @@
 # fzf
 
 
-### About `fzf`
+### About 
+
+#### `fzf` 
+
+* Official introduction. https://github.com/junegunn/fzf#usage
+* Some keywords or `fzf` (by ChatGPT)
+    > **Fuzzy Finder**<br> 
+    > **Interacitve Filtering**
+
+#### `fzf.vim`
+
+>fzf itself is not a Vim plugin, and the official repository only provides the basic wrapper function for Vim. It's up to the users to write their own Vim commands with it. However, I've learned that many users of fzf are not familiar with Vimscript and are looking for the "default" implementation of the features they can find in the alternative Vim plugins.
 
 ### How to Integrate `fzf` to `vim`
 
@@ -56,6 +67,9 @@
     \'command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), fzf#vim#with_preview(), <bang>0)',
     ```
     Looks like `:Rg` is call `rg` to get the source files. And it turns out `rg` (`ripgrep`) is not installed. Install it
+    ```
+    brew install ripgrep
+    ```
 
 **Questions**
 
